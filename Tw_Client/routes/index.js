@@ -1,5 +1,3 @@
-
-
 exports.index = function(req, res){
   console.log("Inside INDEX function");
   res.render('index');
@@ -34,20 +32,6 @@ function about(req, res){
 	
 }
 
-function contactInfo(req, res){
-	
-	console.log("Inside CONTACTINFO function..");
-	
-	if (req.session.username){
-		res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-		res.render("contactInfo");
-	}
-	else{
-		res.redirect('/');
-	}
-	
-}
-
 
 function workEduInfo(req, res){
 	
@@ -73,6 +57,21 @@ function followers(req, res){
 	if (req.session.username){
 		res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
 		res.render("friends");
+	}
+	else{
+		res.redirect('/');
+	}
+	
+}
+
+
+function contactInfo(req, res){
+	
+	console.log("Inside CONTACTINFO function..");
+	
+	if (req.session.username){
+		res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+		res.render("contactInfo");
 	}
 	else{
 		res.redirect('/');
