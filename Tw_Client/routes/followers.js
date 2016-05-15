@@ -15,15 +15,17 @@ function follower_operations(req, res)
 		console.log("User Found");
 	}
 	
-	else if (req.param("type") === "P"){ // Follow the user 
-		var destination = req.param("destination");
-		msg_payload = { "username": username, "destination": destination, "type": type};
-	}
 	
 	
 	else if (req.param("type") === "SF"){ // SF - Show followers
 		msg_payload = { "username": username, "type": type};
 	}
+
+	else if (req.param("type") === "P"){ // Follow the user 
+		var destination = req.param("destination");
+		msg_payload = { "username": username, "destination": destination, "type": type};
+	}
+	
 	else if (req.param("type") === "SF1"){ // SF1 - Show following
 		msg_payload = { "username": username, "type": type};
 	}
