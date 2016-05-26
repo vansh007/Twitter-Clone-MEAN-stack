@@ -1,6 +1,6 @@
 var amqp = require('amqp')
 , util = require('util');
-
+//
 var login = require('./services/login');
 var signup = require('./services/signup');
 var aboutUpdate = require('./services/aboutUpdate');
@@ -8,6 +8,8 @@ var getUpdate = require('./services/getUpdate');
 var userOps = require('./services/userOps');
 var feedOps = require('./services/feedOps');
 var cnn = amqp.createConnection({host:'127.0.0.1'});
+
+//Queues
 cnn.on('ready', function(){
 	
 
